@@ -1,0 +1,26 @@
+﻿@model List<MvcCloudPOE.Models.ContactUs>
+
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var contact in Model)
+        {
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="width: 18rem;">
+                                        <img src="@Url.Content(contact.ImageUrl)" class="card-img-top" alt="KhumaloCraft">
+                                <div class="card-body">
+                                    <h5 class="card-title">@contact.Name</h5>
+                                    <p class="card-text">Type: @contact.Number</p>
+                                    <p class="card-text">Price: @contact.Address</p>
+                                </div>
+                            </div>
+                        </div>
+        }
+    </div>
+</div>
+

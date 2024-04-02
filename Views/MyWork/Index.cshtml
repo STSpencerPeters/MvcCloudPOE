@@ -1,0 +1,36 @@
+﻿@model List<MvcCloudPOE.Models.MyWork>
+
+@{
+    ViewData["Title"] = "KhumaloCraft";
+}
+
+<!--Code Attribution:
+    Source: https://www.shecodes.io/athena/4822-how-to-add-hovering-effects-in-html
+    Implemntation: I implemented the hovering effect for html into my code
+-->
+<style>
+    .card:hover {
+        transform: scale(1.05); 
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); 
+    }
+</style>
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var works in Model)
+        {
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                                <img src="@Url.Content(works.ImageUrl)" class="card-img-top" alt="Game Image">
+                            <div class="card-body">
+                                <h5 class="card-title">@works.Name</h5>
+                                <p class="card-text">Type: @works.Type</p>
+                                <p class="card-text">Price: $@works.Price</p>
+                            </div>
+                        </div>
+                    </div>
+        }
+    </div>
+</div>
